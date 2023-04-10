@@ -5,28 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
+
 <body class="body">
-    <main class="container">
-        <header>
-            <h1>To do List</h1>
-        </header>
-        <section class="section">
-            <h2 class="section__header">Add a new task</h2>
-            <div class="section__body">
-                <form class="form js-form">
-                    <input class="form_input js-newTask" placeholder="What should be added?">
-                    <button class="form__button">Add a task</button>
-                </form>
-            </div>
-        </section>
-        <section class="section">
-            <h2 class="section__header">List of tasks</h2>
-            <div class="section__body">
-                <ul class="tasks js-tasks"></ul>
-            </div>
-        </section>
-    </main>
+<h1 class="title">Список необхідних справ!</h1>
+
+<div class="current-date" id="current-date"></div>
+
+<div class="task-lists-container">
+    <h2 class="task-list-title">Мій список справ</h2>
+    <ul class="task-list" new-task-lists></ul>
+
+    <form action="" new-list-form>
+        <input type="text" class="new list" new-list-input placeholder="Назва нового списку" aria-label="Назва нового списку" />
+        <button class="btn create" aria-label="create new list">Додати список</button>
+    </form>
+    <div class="delete-button">
+        <button class="btn delete" delete-list-button>Видалити список</button>
+    </div>
+</div>
+
+
+
+<div class="todo-list" tasks-list-display-container>
+    <div class="todo-header">
+        <h2 class="list-title" tasks-list-title-element>Мої завдання</h2>
+    </div>
+
+    <div class="todo-body">
+        <div class="tasks" tasks-container></div>
+
+        <div class="new-task-creator">
+            <form action="" new-task-form>
+                <input type="text" new-task-input class="new task" placeholder="Назва нового завдання"
+                    aria-label="new task name" />
+                <button class="btn create" aria-label="create new task">Додати завдання</button>
+            </form>
+        </div>
+
+        <div class="delete-button">
+            <button class="btn delete" delete-done-tasks-button>Видаліть виконані завдання</button>
+        </div>
+    </div>
+</div>
+
+<template id="task-template">
+    <div class="task">
+        <input type="checkbox" />
+        <label>
+            <span class="custom-checkbox"></span>
+        </label>
+    </div>
+</template>
 
     <script src="./index.js"></script>
 </body>

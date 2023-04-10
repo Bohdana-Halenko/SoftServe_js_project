@@ -1,0 +1,167 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: #b3f5ff;
+    color: #1db3c4;
+}
+
+.title {
+    grid-area: header;
+    text-align: center;
+    font-size: 54px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.current-date {
+    font-size: 34px;
+    font-weight: 500;
+    color: #009daf;
+    display: flex;
+    justify-content: center;
+}
+
+.task-lists-container {
+    grid-area: lists;
+    margin: 0 0.5em 2em 0.5em;
+}
+
+.task-list {
+    line-height: 1.5;
+    padding-left: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.selected-list {
+    font-weight: 700;
+}
+
+.new {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    color: #faf3eb;
+    transition: border-bottom 200ms ease-in;
+    outline: none;
+}
+
+.new:focus {
+    border-bottom-width: 3px;
+}
+
+.new:focus::placeholder {
+    opacity: 0.2;
+}
+
+.new.task {
+    font-size: 1.2rem;
+}
+
+.btn {
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    background: #009daf;
+    border: 0;
+    padding: 0;
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn.create {
+    font-weight: 900;
+    transition: opacity 200ms ease-in;
+}
+
+.btn.delete {
+    font-weight: 900;
+    transition: opacity 200ms ease-in;
+}
+
+.btn.create:hover {
+    opacity: 0.5;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn.delete:hover {
+    opacity: 0.5;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.todo-list {
+    padding: 50px;
+    width: 600px;
+    background: #009daf;
+    color: #000;
+}
+
+.todo-header {
+    font-size: 2rem;
+    color: #000;
+}
+
+.list-title {
+    margin: 1.5rem 0 2rem 1rem;
+}
+
+.task-list-title {
+    color: #000;
+}
+
+.todo-body {
+    margin: 0 0 0 1rem;
+}
+
+.custom-checkbox {
+    --size: 0.25em;
+    display: inline-block;
+    margin: 0 0 0.1rem 0.5rem;
+    width: 2px;
+    height: 2px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.task {
+    margin-bottom: 0.5em;
+}
+
+.task label {
+    cursor: pointer;
+    display: flex-inline;
+    align-items: center;
+    position: relative;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60%;
+    height: 2px;
+    background: #000;
+    transform: scaleX(0);
+}
+
+[type="checkbox"]:checked+label::after {
+    transform: scaleX(1);
+}
+
+[type="checkbox"] {
+    display: none;
+}

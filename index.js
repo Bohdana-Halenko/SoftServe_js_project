@@ -20,7 +20,7 @@ let today = new Date();
 let dd = String(today.getDate());
 let mm = String(today.getMonth() + 1);
 let yyyy = today.getFullYear();
-today = yyyy + '/' + mm + '/' + dd;
+today = dd + '/' + mm + '/' + yyyy;
 document.getElementById("current-date").innerHTML = today;
 
 taskListsContainer.addEventListener('click', e => {
@@ -113,7 +113,7 @@ function generalRenderFunc() {
     tasksListDisplayContainer.style.display = "none";
   } else {
     tasksListDisplayContainer.style.display = "";
-    tasksListTitleElement.innerText = 'My ' + selectedList.name + "'s Tasks";
+    tasksListTitleElement.innerText = 'Завдання у списку ' + '"' + selectedList.name + '"';
     clearElement(tasksContainer);
     renderNewTask(selectedList);
   }

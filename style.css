@@ -1,24 +1,21 @@
-html,
-body {
+html{
     height: 100%;
     width: 100%;
 }
 
 body {
-    margin: 0;
-    font-weight: 300;
-    font-size: 1.5rem;
-    background-color: #b3f5ff;
-    color: #1db3c4;
+    color: #001D31;
+    background-color: #F4F4F4;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 30px;
 }
 
 .title {
-    grid-area: header;
-    text-align: center;
     font-size: 54px;
     font-weight: 600;
-    color: #000;
-    letter-spacing: 2px;
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
@@ -28,34 +25,38 @@ body {
 .current-date {
     font-size: 34px;
     font-weight: 500;
-    color: #009daf;
+    color: rgb(94, 94, 94);
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+}
+.wrap{
+    display: flex;
+    justify-content: space-evenly;
+}
+.task-lists-container {
+    border: 1px solid grey;
+    border-radius: 24px;
+    width: 500px;
+    padding: 50px;
+    background: #E6E6FA;
+}
+.task-list-title,
+.todo-header{
     display: flex;
     justify-content: center;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
-
-.task-lists-container {
-    grid-area: lists;
-    margin: 0 0.5em 2em 0.5em;
-}
-
-.task-list {
-    line-height: 1.5;
-    padding-left: 1.1em;
-    cursor: pointer;
-    color: #000;
-}
-
-.selected-list {
-    font-weight: 700;
-}
-
 .new {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    color: #faf3eb;
-    transition: border-bottom 200ms ease-in;
-    outline: none;
+    background: #fff;
+    color: grey;
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
 }
 
 .new:focus {
@@ -65,103 +66,70 @@ body {
 .new:focus::placeholder {
     opacity: 0.2;
 }
-
-.new.task {
-    font-size: 1.2rem;
-}
-
 .btn {
-    letter-spacing: 0.25px;
     cursor: pointer;
-    background: #009daf;
-    border: 0;
-    padding: 0;
-    border-radius: 3px;
+    border: none;
+    border-radius: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 15px;
+    height: 35px;
 }
-
 .btn.create {
+    background: #2faa20;
     font-weight: 900;
     transition: opacity 200ms ease-in;
 }
-
 .btn.delete {
+    background: #d12828;
+    color: #fff;
     font-weight: 900;
     transition: opacity 200ms ease-in;
 }
-
-.btn.create:hover {
-    opacity: 0.5;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.form{
+    display: flex;
 }
-
-.btn.delete:hover {
-    opacity: 0.5;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
 .todo-list {
-    padding: 50px;
+    border: 1px solid grey;
+    border-radius: 24px;
     width: 600px;
-    background: #009daf;
-    color: #000;
+    padding: 50px;
+    background: #E6E6FA;
 }
-
-.todo-header {
-    font-size: 2rem;
-    color: #000;
+.selected-list {
+    font-weight: 700;
 }
-
-.list-title {
-    margin: 1.5rem 0 2rem 1rem;
-}
-
-.task-list-title {
-    color: #000;
-}
-
-.todo-body {
-    margin: 0 0 0 1rem;
-}
-
-.custom-checkbox {
-    --size: 0.25em;
-    display: inline-block;
-    margin: 0 0 0.1rem 0.5rem;
-    width: 2px;
-    height: 2px;
-    margin-right: 20px;
+.task-list {
+    padding-left: 20px;
     cursor: pointer;
-    border: 2px solid #000;
-    border-radius: 50%;
 }
-
+.task-list-name{
+    padding-bottom: 8px;
+}
 .task {
-    margin-bottom: 0.5em;
+    margin-bottom: 8px;
 }
-
 .task label {
     cursor: pointer;
     display: flex-inline;
     align-items: center;
     position: relative;
-}
+} 
 
 .task label::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    top: 60%;
+    top: 50%;
     height: 2px;
-    background: #000;
+    background: rgb(80, 80, 80);
     transform: scaleX(0);
 }
-
+ 
 [type="checkbox"]:checked+label::after {
     transform: scaleX(1);
-}
-
-[type="checkbox"] {
-    display: none;
 }

@@ -78,6 +78,7 @@ newTaskForm.addEventListener('submit', e => {
   }
 })
 
+//функція для створення нового завдання
 function createNewTask(name) {
     return { 
     id: Date.now().toString(), 
@@ -86,6 +87,7 @@ function createNewTask(name) {
   }
 }
 
+//функція для створення нового списку завдань
 function createNewList(name) {
   return { 
     id: Date.now().toString(), 
@@ -94,16 +96,19 @@ function createNewList(name) {
   }
 }
 
+//функція для збереження списку завдань у локальному сховищі
 function saveNewList() {
   localStorage.setItem(localStorageTaskListKey, JSON.stringify(taskLists));
   localStorage.setItem(localStorageSelectedTaskListIDKey, selectedTaskListID);
 }
 
+// функція для оновлення та збереження списку завдань
 function saveAndRenderNewList() {
   generalRenderFunc();
   saveNewList();
 }
 
+//функція для відображення списку завдань та завдань у обраному списку
 function generalRenderFunc() {
   clearElement (taskListsContainer);
   renderNewList();
@@ -119,6 +124,7 @@ function generalRenderFunc() {
   }
 }
 
+//функція для відображення завдань у списку
 function renderNewTask(selectedList) {
   selectedList.tasks.forEach(task => {
     const newTaskElement = document.importNode(taskTemplate.content, true);
@@ -132,6 +138,7 @@ function renderNewTask(selectedList) {
   })
 }
 
+// функція для відображення списку завдань
 function renderNewList() {
     taskLists.forEach(taskList => {
     const taskListElement = document.createElement('li');
